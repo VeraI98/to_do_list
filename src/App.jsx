@@ -1,9 +1,12 @@
+import Button from './components/Button'
+import Field from './components/Field'
+import SearchTaskForm from './components/SearchTaskForm'
+import ToDo from './components/ToDo'
+
 const App = () => {
   return (
-    <div>
-      <h1>TO DO LIST</h1>
-    </div>
+    <ToDo />
   )
 }
 
-export default App;
+export default App
