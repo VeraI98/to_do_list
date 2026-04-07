@@ -1,19 +1,26 @@
 import AddTaskForm from './AddTaskForm'
 import SearchTaskForm from './SearchTaskForm'
-import ToDoInfo from './ToDoInfo'
-import ToDoList from './ToDoList'
+import TodoInfo from './ToDoInfo'
+import TodoList from './ToDoList'
 
-const ToDo = () => {
+const Todo = () => {
+    const tasks = [
+        { id: 'task-1', title: 'Купить молоко', isDone: false },
+        { id: 'task-2', title: 'Погладить кота', isDone: true },
+    ]
+
     return (
         <div className="todo">
-            <h1 className="todo__title">To Do List</h1>
-
-            <AddTaskForm />
-            <SearchTaskForm />
-            <ToDoInfo />
-            <ToDoList />
+        <h1 className="todo__title">To Do List</h1>
+        <AddTaskForm />
+        <SearchTaskForm />
+        <TodoInfo
+            total={tasks.length}
+            done={tasks.filter(({ isDone }) => isDone).length}
+        />
+        <TodoList tasks={tasks} />
         </div>
     )
 }
 
-export default ToDo;
+export default Todo
